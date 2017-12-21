@@ -4,11 +4,10 @@
   "description": "Simple bookstore build Redux with React and Babel support",
   "main": "index.js",
   "repository": "https://github.com/metamorph-online/bookshop-app",
-  "prod": "NODE_ENV=production node server.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "prod": "NODE_ENV=production node server.js",
-    "postinstall": "webpack -p",
+    "production": "webpack -p",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
