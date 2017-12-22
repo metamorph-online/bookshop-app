@@ -74,7 +74,7 @@ export default class RenderBooks extends Component{
 										<li className="list-group-item"><strong>Genre:</strong> {book.genre_s}</li>
 										<li className="list-group-item"><strong>Price:</strong> ${book.price}</li>
 										<li className="list-group-item"><BookDescription description={book.description}></BookDescription></li>
-										<li className="list-group-item"><AddToCart book={book}></AddToCart> <Link to={"book/" + book.id} className="title"><div className="btn btn-success my-inline-btns">More info...</div></Link></li>
+										<li className="list-group-item"><AddToCart book={book}></AddToCart> <Link to={"book/" + book.book_id} className="title"><div className="btn btn-success my-inline-btns">More info...</div></Link></li>
 									</ul>
 								</div>
 								

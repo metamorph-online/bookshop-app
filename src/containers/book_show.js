@@ -9,6 +9,7 @@ import renderHTML from 'react-render-html'; //for description generate
 import {Link} from 'react-router';
 import Facebook from './facebook';
 import CommentForm from './comment_form';
+import _ from 'lodash';
 
 export class BookShow extends Component{
 
@@ -31,7 +32,7 @@ export class BookShow extends Component{
 								<ul className="list-group">
 									<li className="list-group-item active"><h4>Name: {this.props.book.name} </h4></li>
 									<li className="list-group-item"><strong>Author:</strong> {this.props.book.author}</li>
-									<li className="list-group-item"><strong>Book ID:</strong> {this.props.book.id}</li>
+									<li className="list-group-item"><strong>Book ID:</strong> {this.props.book.book_id}</li>
 									<li className="list-group-item"><strong>Genre:</strong> {this.props.book.genre_s}</li>
 									<li className="list-group-item"><strong>Pages:</strong> {this.props.book.pages_i}</li>
 									<li className="list-group-item"><strong>In Stock:</strong> {this.props.book.inStock ? 'Yes' : 'No'}</li>
@@ -62,7 +63,7 @@ export class BookShow extends Component{
 
 	render(){
 
-		if(!this.props.book){
+		if(_.isEmpty(this.props.book) || this.props.book == null){
 			return( 
 				<Preloader />
 			)

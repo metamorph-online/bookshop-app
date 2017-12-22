@@ -46,8 +46,8 @@ export function getBooksData() {
 
 //get book from server by id
 export function fetchBook(id){
-	const request = axios.get(`${ROOT_URL}/books/${id}`);
-
+	const request = axios.get(`${ROOT_URL}?book=${id}`);
+	console.log(request);
 	return {
 		type: GET_BOOK,
 		payload: request

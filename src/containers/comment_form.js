@@ -15,7 +15,7 @@ class CommentForm extends Component{
 		}
 	}
 
-	onReset(){
+	onReset = () => {
 
 		this.setState({
 			title: '',
@@ -23,11 +23,11 @@ class CommentForm extends Component{
 		})
 	}
 
-	submitHandler(e){
-		e.preventDefault();
+	submitHandler = (event) => {
+		event.preventDefault();
 
-		let bookID = this.props.book_id,
-			myComment = JSON.stringify( {
+		let myComment = JSON.stringify( {
+				book_id: this.props.book_id,
 				title : this.state.title,
 				comment : this.state.comment
 			});
@@ -54,8 +54,8 @@ class CommentForm extends Component{
 						<textarea className="form-control" name="comment" onChange={ (e) =>  this.onInputChange(e)} value={this.state.comment} rows="3" placeholder="Comment"></textarea>
 					</div>
 					<div className="form-group">
-						<button  type="submit" className="btn btn-success" onClick={(e)=> this.submitHandler(e)}>Submit</button>
-						<button  type="button" className="btn btn-danger" onClick={ () => {this.onReset()} }>Reset</button>
+						<button  type="submit" className="btn btn-success" onClick={this.submitHandler}>Submit</button>
+						<button  type="button" className="btn btn-danger" onClick={this.onReset}>Reset</button>
 					</div>
 				</form>				
 			</div>
