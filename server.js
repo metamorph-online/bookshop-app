@@ -1,4 +1,8 @@
 var express = require('express');
 var app = express();
-app.use(express.static(__dirname + '/'));
+var passport = require('passport');
+const authRouts = require('./routes/authRoutes');
+
+authRouts(app);
+
 app.listen(process.env.PORT || 8080);
