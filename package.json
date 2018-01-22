@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Simple bookstore build Redux with React and Babel support",
   "main": "index.js",
+  "engines": {
+    "node": "8.9.3",
+    "npm": "5.5.1"
+  },
   "repository": "https://github.com/metamorph-online/bookshop-app",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
