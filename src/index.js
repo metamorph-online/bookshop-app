@@ -18,7 +18,7 @@ const createStoreWithMiddleware = applyMiddleware(ReduxPromise, logger)(createSt
 ReactDOM.render( 
   <Provider store={createStoreWithMiddleware(reducers)}>
 
-    <Router history={hashHistory}>
+    <Router history={browserHistory}>
 	    <Route path='/' component={App}>
 
 	    	<Route path="book/:id" component={BookShow} />
