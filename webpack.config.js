@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -8,16 +10,16 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
+    rules: [{
       exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-1']
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-react', '@babel/env']
       }
     }]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   devServer: {
     historyApiFallback: true,

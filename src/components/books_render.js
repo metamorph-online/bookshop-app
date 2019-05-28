@@ -64,13 +64,13 @@ export default class RenderBooks extends Component{
 				{this.state.books.map((book)=>{
 
 					return (
-						<li key={book.id} className="list-group-item">
+						<li key={book.book_id} className="list-group-item">
 								
 								<div className="cover-img"><img src={book.cover_img} alt="" className="img-responsive" /></div>
 
 								<div className="book-info">
 									<ul className="list-group">
-										<li className="list-group-item active"><Link to={"book/" + book.id} className="title"><h4>Name: {book.name} </h4></Link></li>
+										<li className="list-group-item active"><Link to={"book/" + book.book_id} className="title"><h4>Name: {book.name} </h4></Link></li>
 										<li className="list-group-item"><strong>Genre:</strong> {book.genre_s}</li>
 										<li className="list-group-item"><strong>Price:</strong> ${book.price}</li>
 										<li className="list-group-item"><BookDescription description={book.description}></BookDescription></li>
